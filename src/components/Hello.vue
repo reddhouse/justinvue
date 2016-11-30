@@ -1,11 +1,12 @@
 <template>
   <div class="hello-component">
-    <h1>{{ msg }}</h1>
-    <h1>{{ capsmsg }}</h1>
-    <h2>Tell me something to pass to my child component</h2>
+    <h2>{{ msg }}</h2>
+    <p>Let's use a computed function to return the message above, capitalized</p>
+    <p>{{ capsmsg }}</p>
+    <h2>Now, tell me something to pass to my child component</h2>
     <input v-model="parentObject.msgFromParent" placeholder="Tell me anything...">
-    <p>Message is: {{ parentObject.msgFromParent }}</p>
-    <hello-child v-bind:propsObject="parentObject"></hello-child>
+    <p>You typed: {{ parentObject.msgFromParent }}</p>
+    <hello-child :propsObject="parentObject"></hello-child>
   </div>
 </template>
 
