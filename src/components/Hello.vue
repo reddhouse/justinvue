@@ -1,11 +1,11 @@
 <template>
   <div class="hello-component">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-    </ul>
-    <hello-child></hello-child>
+    <h1>{{ capsmsg }}</h1>
+    <h2>Tell me something to pass to my child component</h2>
+    <input v-model="parentObject.msgFromParent" placeholder="Tell me anything...">
+    <p>Message is: {{ parentObject.msgFromParent }}</p>
+    <hello-child v-bind:propsObject="parentObject"></hello-child>
   </div>
 </template>
 
@@ -16,7 +16,16 @@ export default {
   name: 'hello-component',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to our (parent) Hello Component',
+      parentObject: {
+        msgFromParent: null
+      }
+    }
+  },
+  computed: {
+    capsmsg: function () {
+      let caps = this.msg.toString()
+      return caps.toUpperCase()
     }
   },
   components: {

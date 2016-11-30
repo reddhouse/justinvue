@@ -2,7 +2,11 @@
   <div class="hello-child-component">
     <h1>Testing HelloChild Component</h1>
     {{ msg }}
-    <p :title="hovermsg">Hover on me to see dynamic title sent from the Vue instance</p>
+    <button :style="styleObject" @click="reverseMessage">Reverse Message</button>
+    <button @click="changeColor">Change Color</button>
+    <p v-bind:title="hoverMsg">Hover on me to see dynamic title sent from the Vue instance</p>
+    <p>Here is the message in the child component, reacively delivered:<p>
+    {{ propsObject.msgFromParent }}
   </div>
 </template>
 
@@ -10,10 +14,22 @@
 <script>
 export default {
   name: 'hello-child-component',
+  props: ['propsObject'],
   data () {
     return {
-      msg: 'This message is inside of HelloChild.vue',
-      hovermsg: 'You loaded this page on ' + new Date()
+      msg: 'on click in the house',
+      hoverMsg: 'You loaded this page on ' + new Date(),
+      styleObject: {
+        color: 'red'
+      }
+    }
+  },
+  methods: {
+    reverseMessage: function () {
+      this.msg = this.msg.split(' ').reverse().join(' ')
+    },
+    changeColor: function () {
+      this.styleObject.color === 'red' ? this.styleObject.color = 'blue' : this.styleObject.color = 'red'
     }
   }
 }
