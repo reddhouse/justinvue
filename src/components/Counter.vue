@@ -1,10 +1,12 @@
 <template>
   <div>
-    Value: {{ count }}
+    <h2>Here is a counter which uses our store to get/set global (App) state</h2>
+    <p>Value: {{ count }}</p>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
     <button @click="incrementIfOdd">Increment if odd</button>
     <button @click="incrementAsync">Increment async</button>
+    <br>
     <div>
       <div>Recent History (last 5 entries): {{ recentHistory }}</div>
     </div>
@@ -13,6 +15,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+
 export default {
   computed: mapGetters([
     'count',

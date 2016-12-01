@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <hello></hello>
     <counter></counter>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -27,5 +28,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.footer {
+  margin-top: 120px;
 }
 </style>

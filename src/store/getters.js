@@ -1,3 +1,6 @@
+// Getters are like computed properties for stores
+// They receive the state as their first argument
+
 export const count = state => state.count
 
 const limit = 5
