@@ -1,6 +1,6 @@
 <template>
-  <div class="hello-child-component">
-    <h2>Welcom to our (child) HelloChild Component</h2>
+  <li class="hello-child-component">
+    <h2>Welcome to our (child) HelloChild Component {{ propsSingle }}</h2>
     <div :style="styleObject">
       {{ msg }}
     </div>
@@ -9,14 +9,14 @@
     <p :title="hoverMsg">Hover on me to see dynamic title sent from the Vue instance</p>
     <p>Here is the message in the child component, reacively delivered:<p>
     {{ propsObject.msgFromParent }}
-  </div>
+  </li>
 </template>
 
 
 <script>
 export default {
   name: 'hello-child-component',
-  props: ['propsObject'],
+  props: ['propsObject', 'propsSingle'],
   data () {
     return {
       msg: 'HERE is example stupid',

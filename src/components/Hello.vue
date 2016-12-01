@@ -6,7 +6,13 @@
     <h2>Now, tell me something to pass to my child component</h2>
     <input v-model="parentObject.msgFromParent" placeholder="Tell me anything...">
     <p>You typed: {{ parentObject.msgFromParent }}</p>
-    <hello-child :propsObject="parentObject"></hello-child>
+    <ul>
+      <hello-child
+        v-for="(item, index) in parentObject.simpleArray"
+        :propsSingle="item"
+        :propsObject="parentObject">
+      </hello-child>
+    </ul>
   </div>
 </template>
 
@@ -19,7 +25,8 @@ export default {
     return {
       msg: 'Welcome to our (parent) Hello Component',
       parentObject: {
-        msgFromParent: null
+        msgFromParent: null,
+        simpleArray: ['Foo', 'Bar', 'Baz']
       }
     }
   },
