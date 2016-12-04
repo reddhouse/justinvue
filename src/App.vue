@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <hello></hello>
     <counter></counter>
+    <jsx-test></jsx-test>
     <div class="footer"></div>
   </div>
 </template>
@@ -10,12 +11,14 @@
 <script>
 import Hello from './components/Hello'
 import Counter from './components/Counter'
+import JsxTest from './components/JsxTest'
 
 export default {
   name: 'app',
   components: {
     Hello,
-    Counter
+    Counter,
+    JsxTest
   }
 }
 </script>

@@ -26,7 +26,7 @@ export default {
       msg: 'Welcome to our (parent) Hello Component',
       parentObject: {
         msgFromParent: null,
-        simpleArray: ['Foo', 'Bar', 'Baz']
+        simpleArray: ['Foo', 'Bar']
       }
     }
   },
