@@ -8,7 +8,9 @@ Vue.use(Vuex)
 
 const state = {
   count: 0,
-  history: []
+  history: [],
+  isBusy: false,
+  artists: []
 }
 
 const store = new Vuex.Store({

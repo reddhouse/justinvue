@@ -1,7 +1,7 @@
 <template>
   <div class="hello-component">
     <h2>{{ msg }}</h2>
-    <p>Let's use a computed function to return the message above, capitalized</p>
+    <p>Use a computed function to return the message above, capitalized</p>
     <p>{{ capsmsg }}</p>
     <h2>Now, tell me something to pass to my child component</h2>
     <input v-model="parentObject.msgFromParent" placeholder="Tell me anything...">
@@ -23,7 +23,7 @@ export default {
   name: 'hello-component',
   data () {
     return {
-      msg: 'Welcome to our (parent) Hello Component',
+      msg: 'welcome to our parent component',
       parentObject: {
         msgFromParent: null,
         simpleArray: ['Foo', 'Bar']

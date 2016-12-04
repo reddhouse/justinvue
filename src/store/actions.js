@@ -2,6 +2,8 @@
 // We can pass a second argument to store.commit which is the "payload"
 // for the mutation. Payloads are typically objects.
 
+import axios from 'axios'
+
 export const increment = ({ commit }) => commit('increment')
 export const decrement = ({ commit }) => commit('decrement')
 
@@ -15,4 +17,12 @@ export const incrementAsync = ({ commit }) => {
   setTimeout(() => {
     commit('increment')
   }, 1000)
+}
+
+export const searchByArtistName = ({commit}, {name}) => {
+  commit('requestSearchResults')
+  return axios.get('https://api.spotify.com/v1/search?q=' + name + '&type=artist&limit=10')
+    .then(res => {
+      commit('receiveSearchResults', {artists: res.data.artists.items})
+    })
 }

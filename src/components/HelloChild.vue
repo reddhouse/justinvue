@@ -1,6 +1,10 @@
 <template>
   <li class="hello-child-component">
-    <h2>Welcome to our (child) HelloChild Component {{ propsSingle }}</h2>
+    <h3>
+      Welcome to our
+      <span id="propstyle"> {{ propsSingle }} </span>
+      (child) Component
+    </h3>
     <div :style="styleObject">
       {{ msg }}
     </div>
@@ -39,5 +43,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+#propstyle {
+  color: green;
+}
 
 </style>
