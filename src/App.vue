@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <new-qprocess></new-qprocess>
     <hello></hello>
     <counter></counter>
     <jsx-test></jsx-test>
+    <img src="./assets/logo.png">
     <div class="footer"></div>
   </div>
 </template>
 
 <script>
+import NewQprocess from './components/create/NewQprocess'
 import Hello from './components/Hello'
 import Counter from './components/Counter'
 import JsxTest from './components/JsxTest'
@@ -16,6 +18,7 @@ import JsxTest from './components/JsxTest'
 export default {
   name: 'app',
   components: {
+    NewQprocess,
     Hello,
     Counter,
     JsxTest

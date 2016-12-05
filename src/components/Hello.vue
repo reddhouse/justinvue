@@ -1,5 +1,6 @@
 <template>
   <div class="hello-component">
+    <hr>
     <h2>{{ msg }}</h2>
     <p>Use a computed function to return the message above, capitalized</p>
     <p>{{ capsmsg }}</p>
