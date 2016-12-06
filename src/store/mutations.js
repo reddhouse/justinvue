@@ -18,7 +18,12 @@ export const requestSearchResults = (state) => {
   state.isBusy = true
 }
 
-export const receiveSearchResults = (state, {artists}) => {
+export const receiveSearchResults = (state, { artists }) => {
   state.artists = artists
   state.isBusy = false
+}
+
+export const setTitle = (state, { title }) => {
+  console.log('Inside of the mutation. qpTitle will be = ' + title)
+  state.qpTitle = title
 }

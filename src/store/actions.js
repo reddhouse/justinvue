@@ -19,10 +19,15 @@ export const incrementAsync = ({ commit }) => {
   }, 1000)
 }
 
-export const searchByArtistName = ({commit}, {name}) => {
+export const searchByArtistName = ({ commit }, { name }) => {
   commit('requestSearchResults')
   return axios.get('https://api.spotify.com/v1/search?q=' + name + '&type=artist&limit=10')
     .then(res => {
       commit('receiveSearchResults', {artists: res.data.artists.items})
     })
+}
+
+export const setTitle = ({ commit }, { title }) => {
+  console.log('Inside of setTile Action')
+  commit('setTitle', { title })
 }

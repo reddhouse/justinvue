@@ -15,5 +15,6 @@ export const recentHistory = state => {
 }
 
 export const artists = state => state.artists
-
 export const isBusy = state => state.isBusy
+
+export const qpTitle = state => state.qpTitle

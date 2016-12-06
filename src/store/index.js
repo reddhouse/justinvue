@@ -10,7 +10,8 @@ const state = {
   count: 0,
   history: [],
   isBusy: false,
-  artists: []
+  artists: [],
+  qpTitle: null
 }
 
 const store = new Vuex.Store({
