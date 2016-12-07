@@ -41,9 +41,9 @@ export default {
         }
         <h3>Process2</h3>
         <form-field
-        editMode={true}
-        fieldName={'TITLE'}
-        fieldValue={this.qpTitle}>
+          editMode={true}
+          fieldName={'TITLE'}
+          fieldValue={this.qpTitle}>
         </form-field>
       </div>
     )
