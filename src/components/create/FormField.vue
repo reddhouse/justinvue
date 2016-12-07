@@ -20,9 +20,10 @@ export default {
       this.title = enteredText
     },
     onExitTextBox: function (currentValue) {
-      this.localEditMode = false
-      console.log('Inside onExitTextBox, and currentValue= ', currentValue, this.fieldName)
-      this.setField({ field: this.fieldName, text: currentValue })
+      if (currentValue !== '') {
+        this.localEditMode = false
+        this.setField({ field: this.fieldName, text: currentValue })
+      }
     },
     setLocalEditMode: function () {
       this.localEditMode = true

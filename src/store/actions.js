@@ -28,12 +28,10 @@ export const searchByArtistName = ({ commit }, { name }) => {
 }
 
 export const setTitle = ({ commit }, { title }) => {
-  console.log('Inside of setTile Action')
   commit('setTitle', { title })
 }
 
 export const setField = ({ commit }, payload) => {
-  console.log('Inside of setField Action', payload.field, payload.text)
   switch (payload.field) {
     case 'TITLE':
       commit('setTitle2', { text: payload.text })

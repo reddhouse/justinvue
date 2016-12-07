@@ -24,11 +24,9 @@ export const receiveSearchResults = (state, { artists }) => {
 }
 
 export const setTitle = (state, { title }) => {
-  console.log('Inside of the mutation. qpTitle will be = ' + title)
   state.qpTitle = title
 }
 
 export const setTitle2 = (state, { text }) => {
-  console.log('Inside of the mutation. qpTitle will be = ' + text)
   state.qpTitle = text
 }
