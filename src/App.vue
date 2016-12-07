@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <new-qprocess></new-qprocess>
+    <qprocess-info></qprocess-info>
     <hello></hello>
     <counter></counter>
     <jsx-test></jsx-test>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import NewQprocess from './components/create/NewQprocess'
+import QprocessInfo from './components/create/QprocessInfo'
 import Hello from './components/Hello'
 import Counter from './components/Counter'
 import JsxTest from './components/JsxTest'
@@ -18,7 +18,7 @@ import JsxTest from './components/JsxTest'
 export default {
   name: 'app',
   components: {
-    NewQprocess,
+    QprocessInfo,
     Hello,
     Counter,
     JsxTest

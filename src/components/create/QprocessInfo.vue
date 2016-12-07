@@ -1,9 +1,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import FormField from './FormField'
 // import HelloChild from './HelloChild'
 
 export default {
-  name: 'new-qprocess-component',
+  name: 'qprocess-info-component',
+  components: {
+    FormField
+  },
   data () {
     return {
       title: '',
@@ -24,7 +28,7 @@ export default {
   },
   render (h) {
     return (
-      <div class="new-qprocess-component">
+      <div class="qprocess-info-component">
         <h3>Process</h3>
         { this.qpTitle
           ? <p>Title: {this.qpTitle}</p>
@@ -35,6 +39,12 @@ export default {
               placeholder="Process Title"
             />
         }
+        <h3>Process2</h3>
+        <form-field
+        editMode={true}
+        fieldName={'TITLE'}
+        fieldValue={this.qpTitle}>
+        </form-field>
       </div>
     )
   }
@@ -44,8 +54,8 @@ export default {
 
 <style scoped>
 
-.new-qprocess-component {
-  
+.qprocess-info-component {
+
 }
 
 </style>
