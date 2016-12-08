@@ -1,6 +1,5 @@
 <script>
 import { mapActions } from 'vuex'
-
 export default {
   name: 'form-field-component',
   props: [
@@ -17,15 +16,18 @@ export default {
   methods: {
     ...mapActions(['setField']),
     onInputChange: function (enteredText) {
-      this.title = enteredText
-    },
-    onExitTextBox: function (currentValue) {
-      if (currentValue !== '') {
+      if (enteredText !== '') {
+        this.title = enteredText
+        this.setField({ field: this.fieldName, text: enteredText })
         this.localEditMode = false
-        this.setField({ field: this.fieldName, text: currentValue })
       }
     },
-    setLocalEditMode: function () {
+    handleNoChange: function (textInBox) {
+      if (textInBox === this.title) {
+        this.localEditMode = false
+      }
+    },
+    toggleEditMode: function () {
       this.localEditMode = true
     }
   },
@@ -34,12 +36,12 @@ export default {
       <div class="form-field-component">
         { this.localEditMode
           ? <input
-              onBlur={(event) => this.onExitTextBox(this.title)}
               value={this.title}
               onChange={(event) => this.onInputChange(event.target.value)}
+              onBlur={(event) => this.handleNoChange(event.target.value)}
               placeholder="Process Title"
             />
-          : <p onClick={(event) => this.setLocalEditMode()}>Title (click to edit): {this.fieldValue}</p>
+          : <p onClick={(event) => this.toggleEditMode()}>Clickable & Editable Title: {this.fieldValue}</p>
         }
       </div>
     )
