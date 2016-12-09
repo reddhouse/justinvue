@@ -1,12 +1,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import FormField from './FormField'
-// import HelloChild from './HelloChild'
+import FormField2 from './FormField2'
+import FormField3 from './FormField3'
 
 export default {
-  name: 'qprocess-info-component',
+  name: 'form-field1-component',
   components: {
-    FormField
+    FormField2,
+    FormField3
   },
   data () {
     return {
@@ -28,8 +29,9 @@ export default {
   },
   render (h) {
     return (
-      <div class="qprocess-info-component">
-        <h3>Process</h3>
+      <div class="form-field1-component">
+        {/* First Attempt */}
+        <h3>Input Test 1 - Uses render/JSX and updates app level state.</h3>
         { this.qpTitle
           ? <p>Title: {this.qpTitle}</p>
           : <input
@@ -39,23 +41,22 @@ export default {
               placeholder="Process Title"
             />
         }
-        <h3>Process2</h3>
-        <form-field
+        {/* Second Attempt */}
+        <h3>Input Test 2 - Uses render/JSX and has editable but buggy input.</h3>
+        <form-field2
           editMode={true}
           fieldName={'TITLE'}
           fieldValue={this.qpTitle}>
-        </form-field>
+        </form-field2>
+        {/* Third Attempt */}
+        <h3>Input Test 3 - Uses vue &lt;template&gt; feature and has key and blur events fixed.</h3>
+        <form-field3
+          editMode={true}
+          fieldName={'TITLE'}
+          fieldValue={this.qpTitle}>
+        </form-field3>
       </div>
     )
   }
 }
 </script>
-
-
-<style scoped>
-
-.qprocess-info-component {
-
-}
-
-</style>
