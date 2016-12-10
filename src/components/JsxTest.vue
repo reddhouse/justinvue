@@ -21,7 +21,7 @@ export default {
   render (h) {
     return (
       <div class="jsx-test-component">
-        <h1>We Are Rendering!</h1>
+        <h2>Rendering JSX!</h2>
         <JsxTestChild propsSingle= { this.msg } />
         <h2>Type a first name and see a list of matching artists from Spotify</h2>
         <ArtistSearch />

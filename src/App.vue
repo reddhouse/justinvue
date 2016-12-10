@@ -4,7 +4,6 @@
     <hello></hello>
     <counter></counter>
     <jsx-test></jsx-test>
-    <img src="./assets/logo.png">
     <div class="footer"></div>
   </div>
 </template>
@@ -33,7 +32,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  margin: 60px 60px;
+  margin: 60px;
 }
 
 .footer {

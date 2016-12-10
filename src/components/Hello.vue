@@ -2,17 +2,38 @@
   <div class="hello-component">
     <br>
     <hr>
-    <h2>{{ msg }}</h2>
-    <p>Use a computed function to return the message above, capitalized</p>
-    <p>{{ capsmsg }}</p>
-    <h2>Now, tell me something to pass to my child component</h2>
-    <input v-model="parentObject.msgFromParent" placeholder="Tell me anything...">
-    <p>You typed: {{ parentObject.msgFromParent }}</p>
+    <img src="../assets/logo.png">
+    <h2
+      v-bind:style="styles">
+      {{ msg }}
+    </h2>
+    <span>Font Color:</span>
+    <input
+      v-model="fontColor"
+      placeholder="Choose a color">
+    <p>&#8226; Use a computed function to return the message above, capitalized</p>
+    <p class="indent" v-bind:style="styles">{{ capsmsg }}</p>
+    <p>&#8226; Use a filter to return the message above, undercased</p>
+    <!-- Filters can be chained together. We coud add a second pipe here.  -->
+    <p class="indent" v-bind:style="styles">{{ msg | undercase }}</p>
+    <p>&#8226; Now, tell me something to pass to my child component</p>
+    <span>Type Here:</span>
+    <input
+      v-model="parentObject.msgFromParent"
+      placeholder="Tell me anything...">
+    <p
+      v-bind:class="{ 'easter-egg': isJustin }">
+      You typed: {{ parentObject.msgFromParent }}
+    </p>
+    <p
+      v-if="isJustin">
+      Congrats! You found an easter egg!
+    </p>
     <ul>
       <hello-child
         v-for="(item, index) in parentObject.simpleArray"
-        :propsSingle="item"
-        :propsObject="parentObject">
+        v-bind:propsSingle="item"
+        v-bind:propsObject="parentObject">
       </hello-child>
     </ul>
   </div>
@@ -25,7 +46,8 @@ export default {
   name: 'hello-component',
   data () {
     return {
-      msg: 'welcome to our parent component',
+      msg: 'Welcome to our Parent Component',
+      fontColor: '',
       parentObject: {
         msgFromParent: null,
         simpleArray: ['Foo', 'Bar']
@@ -36,6 +58,21 @@ export default {
     capsmsg: function () {
       let caps = this.msg.toString()
       return caps.toUpperCase()
+    },
+    isJustin: function () {
+      return this.parentObject.msgFromParent === 'Justin'
+    },
+    styles: function () {
+      return {
+        color: this.fontColor
+      }
+    }
+  },
+  filters: {
+    undercase: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.toLowerCase()
     }
   },
   components: {
@@ -57,10 +94,18 @@ ul {
 
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0px 10px;
 }
 
 a {
   color: #42b983;
+}
+
+.indent {
+  margin: 0px 0px 0px 30px;
+}
+
+.easter-egg {
+  color: purple;
 }
 </style>
