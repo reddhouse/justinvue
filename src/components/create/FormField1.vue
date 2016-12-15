@@ -30,11 +30,14 @@ export default {
   render (h) {
     return (
       <div class="form-field1-component">
+      <br />
+      <hr />
         {/* First Attempt */}
         <h3>Input Test 1 - Uses render/JSX and updates app level state.</h3>
         { this.qpTitle
           ? <p>Title: {this.qpTitle}</p>
           : <input
+              type="text"
               onBlur={(event) => this.onExitTextBox(this.title)}
               value={this.title}
               onChange={(event) => this.onInputChange(event.target.value)}

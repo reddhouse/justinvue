@@ -11,7 +11,9 @@ const state = {
   history: [],
   isBusy: false,
   artists: [],
-  qpTitle: null
+  qpTitle: null,
+  stateTitle: '',
+  stateDescription: ''
 }
 
 const store = new Vuex.Store({

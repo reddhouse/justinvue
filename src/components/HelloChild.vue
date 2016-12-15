@@ -5,12 +5,12 @@
       <span id="propstyle"> {{ propsSingle }} </span>
       (child) Component
     </h3>
-    <div :style="styleObject">
+    <div v-bind:style="styleObject">
       {{ msg }}
     </div>
-    <button @click="reverseMessage">Reverse Message</button>
-    <button @click="changeColor">Change Color</button>
-    <p :title="hoverMsg">Hover on me to see dynamic title sent from the Vue instance</p>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+    <button v-on:lick="changeColor">Change Color</button>
+    <p v-bind:title="hoverMsg">Hover on me to see dynamic title sent from the Vue instance</p>
     <p>Here is the message in the child component, reacively delivered:<p>
     {{ propsObject.msgFromParent }}
   </li>

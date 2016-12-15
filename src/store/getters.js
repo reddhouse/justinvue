@@ -18,3 +18,8 @@ export const artists = state => state.artists
 export const isBusy = state => state.isBusy
 
 export const qpTitle = state => state.qpTitle
+
+// 726726726726726726726726726726726726726726726726726726726726726726726
+
+export const stateTitle = state => state.stateTitle
+export const stateDescription = state => state.stateDescription

@@ -9,6 +9,7 @@
     </h2>
     <span>Font Color:</span>
     <input
+      type="text"
       v-model="fontColor"
       placeholder="Choose a color">
     <p>&#8226; Use a computed function to return the message above, capitalized</p>
@@ -19,6 +20,7 @@
     <p>&#8226; Now, tell me something to pass to my child component</p>
     <span>Type Here:</span>
     <input
+      type="text"
       v-model="parentObject.msgFromParent"
       placeholder="Tell me anything...">
     <p
@@ -26,7 +28,7 @@
       You typed: {{ parentObject.msgFromParent }}
     </p>
     <p
-      v-if="isJustin">
+      v-show="isJustin">
       Congrats! You found an easter egg!
     </p>
     <ul>

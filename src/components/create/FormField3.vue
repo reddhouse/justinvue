@@ -1,6 +1,7 @@
 <template>
   <div class="form-field3-component">
     <input
+      type="text"
       v-if="localEditMode"
       v-model="title"
       placeholder="Process Title"

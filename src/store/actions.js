@@ -31,10 +31,15 @@ export const setTitle = ({ commit }, { title }) => {
   commit('setTitle', { title })
 }
 
+// 726726726726726726726726726726726726726726726726726726726726726726726
+
 export const setField = ({ commit }, payload) => {
   switch (payload.field) {
     case 'TITLE':
-      commit('setTitle2', { text: payload.text })
+      commit('setStateTitle', { text: payload.text })
+      break
+    case 'DESCRIPTION':
+      commit('setStateDescription', { text: payload.text })
       break
   }
 }

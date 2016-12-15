@@ -30,3 +30,13 @@ export const setTitle = (state, { title }) => {
 export const setTitle2 = (state, { text }) => {
   state.qpTitle = text
 }
+
+// 726726726726726726726726726726726726726726726726726726726726726726726
+
+export const setStateTitle = (state, { text }) => {
+  state.stateTitle = text
+}
+
+export const setStateDescription = (state, { text }) => {
+  state.stateDescription = text
+}

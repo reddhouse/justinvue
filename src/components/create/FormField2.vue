@@ -36,6 +36,7 @@ export default {
       <div class="form-field2-component">
         { this.localEditMode
           ? <input
+              type="text"
               value={this.title}
               // autoFocus="true"
               onChange={(event) => this.onInputChange(event.target.value)}
