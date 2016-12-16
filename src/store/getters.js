@@ -23,3 +23,7 @@ export const qpTitle = state => state.qpTitle
 
 export const stateTitle = state => state.stateTitle
 export const stateDescription = state => state.stateDescription
+export const stateEmail = state => state.stateEmail
+export const stateAction = state => state.stateAction
+export const stateInstructions = state => state.stateInstructions
+export const stateDueDate = state => state.stateDueDate

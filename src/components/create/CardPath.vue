@@ -1,21 +1,18 @@
 <template>
-  <div class="new-qprocess-component">
-    <h2>New Process</h2>
-    <qprocess-info></qprocess-info>
-    <step-form></step-form>
+  <div class="card-path-component">
+
   </div>
 </template>
 <!-- 726726726726726726726726726726726726726726726726726726726726726726726 -->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
-import QprocessInfo from './QprocessInfo'
-import StepForm from './StepForm'
+// import HelloChild from './HelloChild'
 
 export default {
-  name: 'new-qprocess-component',
+  name: 'card-path-component',
   data () {
     return {
-      propsObject0: {
+      propsObject1: {
 
       }
     }
@@ -30,8 +27,7 @@ export default {
 
   },
   components: {
-    QprocessInfo,
-    StepForm
+    HelloChild
   }
 }
 </script>

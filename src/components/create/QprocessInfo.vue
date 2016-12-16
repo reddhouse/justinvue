@@ -76,9 +76,6 @@ export default {
       }
     }
   },
-  filters: {
-
-  },
   directives: {
     focus: {
       inserted: function (el) {

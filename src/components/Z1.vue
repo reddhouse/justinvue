@@ -6,7 +6,7 @@
 <!-- 726726726726726726726726726726726726726726726726726726726726726726726 -->
 <script>
 // import { mapGetters, mapActions } from 'vuex'
-import HelloChild from './HelloChild'
+// import HelloChild from './HelloChild'
 
 export default {
   name: 'hello-component',

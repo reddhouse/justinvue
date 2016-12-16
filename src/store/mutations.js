@@ -36,7 +36,18 @@ export const setTitle2 = (state, { text }) => {
 export const setStateTitle = (state, { text }) => {
   state.stateTitle = text
 }
-
 export const setStateDescription = (state, { text }) => {
   state.stateDescription = text
+}
+export const setStateEmail = (state, { text }) => {
+  state.stateEmail = text
+}
+export const setStateAction = (state, { text }) => {
+  state.stateAction = text
+}
+export const setStateInstructions = (state, { text }) => {
+  state.stateInstructions = text
+}
+export const setStateDueDate = (state, { text }) => {
+  state.stateDueDate = text
 }

@@ -41,5 +41,17 @@ export const setField = ({ commit }, payload) => {
     case 'DESCRIPTION':
       commit('setStateDescription', { text: payload.text })
       break
+    case 'EMAIL':
+      commit('setStateEmail', { text: payload.text })
+      break
+    case 'ACTION':
+      commit('setStateAction', { text: payload.text })
+      break
+    case 'INSTRUCTIONS':
+      commit('setStateInstructions', { text: payload.text })
+      break
+    case 'DUEDATE':
+      commit('setStateDueDate', { text: payload.text })
+      break
   }
 }
