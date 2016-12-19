@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <new-qprocess></new-qprocess>
-    <form-field1></form-field1>
+    <!-- <form-field1></form-field1> -->
     <hello></hello>
     <counter></counter>
     <jsx-test></jsx-test>
