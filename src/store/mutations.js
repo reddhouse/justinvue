@@ -39,15 +39,26 @@ export const setStateTitle = (state, { text }) => {
 export const setStateDescription = (state, { text }) => {
   state.stateDescription = text
 }
-export const setStateEmail = (state, { text }) => {
-  state.stateEmail = text
+
+export const setStateEmail = (state, { text, index }) => {
+  state.stateStepList[index].email = text
 }
-export const setStateAction = (state, { text }) => {
-  state.stateAction = text
+export const setStateAction = (state, { text, index }) => {
+  state.stateStepList[index].action = text
 }
-export const setStateInstructions = (state, { text }) => {
-  state.stateInstructions = text
+export const setStateInstructions = (state, { text, index }) => {
+  state.stateStepList[index].instructions = text
 }
-export const setStateDueDate = (state, { text }) => {
-  state.stateDueDate = text
+export const setStateDueDate = (state, { text, index }) => {
+  state.stateStepList[index].dueDate = text
+}
+export const setStateNotify = (state, { text, index }) => {
+  state.stateStepList[index].notify = text
+}
+export const setStatePause = (state, { text, index }) => {
+  state.stateStepList[index].pause = text
+}
+
+export const addBlankForm = (state, { blankForm, numSteps }) => {
+  state.stateStepList.splice(numSteps, 0, blankForm)
 }

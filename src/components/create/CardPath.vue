@@ -1,33 +1,34 @@
 <template>
   <div class="card-path-component">
-
+    <step-form
+      v-for="(step, index) in stateStepList"
+      v-bind:propsStep="step"
+      v-bind:propsIndex="index">
+    </step-form>
+    <button
+      v-on:click="handleNewForm()">
+      Add Another Step
+    </button>
   </div>
 </template>
 <!-- 726726726726726726726726726726726726726726726726726726726726726726726 -->
 <script>
-// import { mapGetters, mapActions } from 'vuex'
-// import HelloChild from './HelloChild'
+import { mapGetters, mapActions } from 'vuex'
+import StepForm from './StepForm'
 
 export default {
   name: 'card-path-component',
-  data () {
-    return {
-      propsObject1: {
-
-      }
-    }
-  },
   computed: {
-    // ...mapGetters(['titleState'])
+    ...mapGetters(['stateStepList'])
   },
   methods: {
-    // ...mapActions(['setTitle'])
-  },
-  filters: {
-
+    ...mapActions(['addBlankForm']),
+    handleNewForm: function () {
+      this.addBlankForm({ numSteps: this.stateStepList.length })
+    }
   },
   components: {
-    HelloChild
+    StepForm
   }
 }
 </script>

@@ -9,7 +9,7 @@
       {{ msg }}
     </div>
     <button v-on:click="reverseMessage">Reverse Message</button>
-    <button v-on:lick="changeColor">Change Color</button>
+    <button v-on:click="changeColor">Change Color</button>
     <p v-bind:title="hoverMsg">Hover on me to see dynamic title sent from the Vue instance</p>
     <p>Here is the message in the child component, reacively delivered:<p>
     {{ propsObject.msgFromParent }}

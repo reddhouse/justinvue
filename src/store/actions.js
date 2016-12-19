@@ -41,17 +41,40 @@ export const setField = ({ commit }, payload) => {
     case 'DESCRIPTION':
       commit('setStateDescription', { text: payload.text })
       break
-    case 'EMAIL':
-      commit('setStateEmail', { text: payload.text })
+  }
+}
+
+export const setField2 = ({ commit }, payload) => {
+  switch (payload.field) {
+    case 'email':
+      commit('setStateEmail', { text: payload.text, index: payload.index })
       break
-    case 'ACTION':
-      commit('setStateAction', { text: payload.text })
+    case 'action':
+      commit('setStateAction', { text: payload.text, index: payload.index })
       break
-    case 'INSTRUCTIONS':
-      commit('setStateInstructions', { text: payload.text })
+    case 'dueDate':
+      commit('setStateDueDate', { text: payload.text, index: payload.index })
       break
-    case 'DUEDATE':
-      commit('setStateDueDate', { text: payload.text })
+    case 'instructions':
+      commit('setStateInstructions', { text: payload.text, index: payload.index })
+      break
+    case 'notify':
+      commit('setStateNotify', { text: payload.text, index: payload.index })
+      break
+    case 'pause':
+      commit('setStatePause', { text: payload.text, index: payload.index })
       break
   }
+}
+
+export const addBlankForm = ({ commit }, { numSteps }) => {
+  let blankForm = {
+    'email': '',
+    'dueDate': '',
+    'action': '',
+    'instructions': '',
+    'notify': false,
+    'pause': false
+  }
+  commit('addBlankForm', { blankForm, numSteps })
 }

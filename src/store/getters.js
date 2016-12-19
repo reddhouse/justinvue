@@ -27,3 +27,5 @@ export const stateEmail = state => state.stateEmail
 export const stateAction = state => state.stateAction
 export const stateInstructions = state => state.stateInstructions
 export const stateDueDate = state => state.stateDueDate
+
+export const stateStepList = state => state.stateStepList

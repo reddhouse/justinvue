@@ -10,9 +10,10 @@
 
 export default {
   name: 'hello-component',
+  props: ['propsIn'],
   data () {
     return {
-      propsObject: {
+      propsOut: {
 
       }
     }
@@ -27,7 +28,7 @@ export default {
 
   },
   components: {
-    HelloChild
+    // HelloChild
   }
 }
 </script>
