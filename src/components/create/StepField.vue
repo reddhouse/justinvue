@@ -8,8 +8,9 @@
       </div>
       <input
         type="text"
+        v-bind:size="fieldWidth"
+        v-bind:placeholder="'Click to enter ' + keyToText(propsKey).toLowerCase()"
         v-model="localField"
-        placeholder="Enter Text"
         v-focus
         v-on:blur="onInputChange(localField, propsKey)"
         v-on:keyup.enter="onInputChange(localField, propsKey)"/>
@@ -39,16 +40,20 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['titleState'])
-    blankField: function () {
+    blankField () {
       if (this.propsValue === '') {
         return true
       } else return false
+    },
+    fieldWidth () {
+      let textWidth = this.localField.length
+      return textWidth >= 30 ? textWidth + 5 : 30
     }
   },
   methods: {
     ...mapActions(['setField2']),
-    keyToText: function (key) {
+
+    keyToText (key) {
       let returnValue = null
       switch (key) {
         case 'email':
@@ -72,30 +77,33 @@ export default {
       }
       return returnValue
     },
-    onInputChange: function (enteredText, inboundField) {
+
+    onInputChange (enteredText, inboundField) {
       if (enteredText !== '') {
         this.editingField = false
         this.setField2({ field: inboundField, text: enteredText, index: this.propsIndex })
       }
     }
   },
-  filters: {
-
-  },
   directives: {
     focus: {
-      inserted: function (el) {
+      inserted (el) {
         el.focus()
       }
     }
-  },
-  components: {
-    // HelloChild
   }
 }
 </script>
 <!-- 726726726726726726726726726726726726726726726726726726726726726726726 -->
 <style scoped>
+
+input {
+  border: none;
+}
+
+:focus {
+  outline:none;
+}
 
 .field-heading {
   font-weight: bold;

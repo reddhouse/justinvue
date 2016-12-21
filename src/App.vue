@@ -36,19 +36,15 @@ export default {
   text-align: left;
   color: #2c3e50;
   margin: 60px;
-  box-sizing: border-box; /*Needed for responsive grid-view*/
 }
 
-/*input {
-  border: none;
+::-webkit-input-placeholder {
+   color: red;
 }
 
-textarea {
-  resize: none;
-  border: none;
-}*/
-
-:focus {outline:none;}
+::-moz-placeholder {
+   color: red;
+}
 
 .footer {
   margin-top: 120px;

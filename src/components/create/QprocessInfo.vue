@@ -7,9 +7,10 @@
     </div>
     <input
       type="text"
+      v-bind:size="titleFieldWidth"
       v-if="editTitle"
       v-model="localTitle"
-      placeholder="Process title"
+      placeholder="Click to enter process title"
       v-focus
       v-on:blur="onInputChange(localTitle, 'TITLE')"
       v-on:keyup.enter="onInputChange(localTitle, 'TITLE')"/>
@@ -29,9 +30,10 @@
     </div>
     <input
       type="text"
+      v-bind:size="descriptionFieldWidth"
       v-if="editDesciption"
       v-model="localDescription"
-      placeholder="Description of process"
+      placeholder="Click to enter description of process"
       v-focus
       v-on:blur="onInputChange(localDescription, 'DESCRIPTION')"
       v-on:keyup.enter="onInputChange(localDescription, 'DESCRIPTION')"/>
@@ -61,7 +63,15 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['stateTitle', 'stateDescription'])
+    ...mapGetters(['stateTitle', 'stateDescription']),
+    titleFieldWidth: function () {
+      let textWidth = this.localTitle.length
+      return textWidth >= 30 ? textWidth + 5 : 30
+    },
+    descriptionFieldWidth: function () {
+      let textWidth = this.localDescription.length
+      return textWidth >= 30 ? textWidth + 5 : 30
+    }
   },
   methods: {
     ...mapActions(['setField']),
@@ -101,5 +111,14 @@ export default {
 .field-value {
   font-weight: normal;
 }
+
+input {
+  border: none;
+}
+
+:focus {
+  outline:none;
+}
+
 
 </style>
